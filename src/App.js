@@ -4,15 +4,15 @@ import Content from './Content';
 
 
 function App() {
-  const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem('tasks')));
-  
-  const [isEditing, setEditing] = useState(false);
-  const [editingId, setEditingId] = useState(null);
 
   const getTasksFromLocalStorage = () => {
     const storedTasks = localStorage.getItem("tasks");
     return storedTasks ?  JSON.parse(storedTasks) : [];
   }
+  const [tasks, setTasks] = useState(getTasksFromLocalStorage);
+  
+  const [isEditing, setEditing] = useState(false);
+  const [editingId, setEditingId] = useState(null);
 
   const addTask = (e) =>{
     e.preventDefault();

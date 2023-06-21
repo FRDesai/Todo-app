@@ -1,15 +1,22 @@
-import React from 'react'
+import { React, useEffect, useState } from 'react'
 import { FaTrashAlt, FaEdit } from 'react-icons/fa';
 import './list.css'
 
 
 
 const List = ( {tasks, taskDeleted, handleChange, EditTask}) => {
-  
+
+  const [taskss, setTasks] = useState([]);
+
+  useEffect(() =>{
+    const storedTasks = localStorage.getItem('tasks');
+    const tasks = storedTasks ? JSON.parse(storedTasks) : [];
+    setTasks(tasks);
+  }, [taskss]);
   return (
     <div>
        <ul>
-            {tasks?.map((task, index) =>
+            {taskss?.map((task, index) =>
               <li key={index} className='row'>
                 <input 
                   type="checkbox"
