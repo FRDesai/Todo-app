@@ -13,7 +13,7 @@ const Button = ({addTask, changeTask, isEditing, editingId}) => {
       <button
       type="button"
       className="button-33"
-      onClick={addTask} 
+      onClick={(e) => addTask(e)} 
       >Add</button>
     )}
     </div>

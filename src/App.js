@@ -4,17 +4,18 @@ import Content from './Content';
 
 
 function App() {
-  const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem('taskList')));
+  const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem('tasks')));
   
   const [isEditing, setEditing] = useState(false);
   const [editingId, setEditingId] = useState(null);
 
   const getTasksFromLocalStorage = () => {
-    const taskList = localStorage.getItem("taskList");
-    return taskList ?  JSON.parse(taskList) : [];
+    const storedTasks = localStorage.getItem("tasks");
+    return storedTasks ?  JSON.parse(storedTasks) : [];
   }
 
-  const addTask = () =>{
+  const addTask = (e) =>{
+    e.preventDefault();
     let task = document.getElementById('task').value;
     if (task !== ''){
       const newTask = {
@@ -24,7 +25,7 @@ function App() {
       };
       const tasks = getTasksFromLocalStorage();
       tasks.push(newTask);
-      localStorage.setItem('task' , JSON.stringify(tasks));
+      localStorage.setItem('tasks' , JSON.stringify(tasks));
       
       setTasks(prevTasks => [...prevTasks, newTask]);
       document.getElementById('task').value = '';
@@ -38,13 +39,13 @@ function App() {
     const updatedTasks = [...tasks];
     updatedTasks.splice(index, 1);
     setTasks(updatedTasks);
-    localStorage.setItem('taskList', JSON.stringify(updatedTasks));
+    localStorage.setItem('tasks', JSON.stringify(updatedTasks));
   }
 
   const handleChange = (id) => {
     const changedTasks = tasks.map((task) => task.id === id ? {...task, checked: !task.checked} : task);
     setTasks(changedTasks);
-    localStorage.setItem('taskList', JSON.stringify(changedTasks));
+    localStorage.setItem('tasks', JSON.stringify(changedTasks));
   }
 
   const EditTask = (id) => {
@@ -60,7 +61,7 @@ function App() {
    setTasks(updatedTasks);
    document.getElementById('task').value = '';
    setEditing(false);
-   localStorage.setItem('taskList', JSON.stringify(updatedTasks));
+   localStorage.setItem('tasks', JSON.stringify(updatedTasks));
   } 
 
   return (
