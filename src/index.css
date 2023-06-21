@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.row {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+li:nth-child(odd){
+  background-color: pink;
+}
+li:nth-child(even){
+  background-color: aliceblue;
+}
+
+.container{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+  padding-bottom: 25px;
+}
+div ul{
+  
+  padding: 0;
+  margin: 0 50px; 
+}
+
+div ul li {
+  list-style: none;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  text-align: center;
+}
+
+
+/* CSS */
+.button-33 {
+  background-color: pink;
+  border-radius: 100px;
+  box-shadow: rgba(187, 44, 144, 0.2) 0 -25px 18px -14px inset,rgba(110, 96, 109, 0.15) 0 1px 2px,rgba(218, 225, 221, 0.15) 0 2px 4px,rgba(179, 148, 177, 0.15) 0 4px 8px,rgba(29, 54, 39, 0.15) 0 8px 16px,rgba(6, 6, 6, 0.15) 0 16px 32px;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-33:hover {
+  box-shadow: rgba(23, 25, 24, 0.35) 0 -25px 18px -14px inset,rgba(187, 44, 165, 0.25) 0 1px 2px,rgba(214, 124, 215, 0.25) 0 2px 4px,rgba(175, 144, 183, 0.25) 0 4px 8px,rgba(203, 152, 197, 0.25) 0 8px 16px,rgba(129, 121, 129, 0.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
