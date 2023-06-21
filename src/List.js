@@ -9,7 +9,7 @@ const List = ( {tasks, taskDeleted, handleChange, EditTask}) => {
   return (
     <div>
        <ul>
-            {tasks.map((task, index) =>
+            {tasks?.map((task, index) =>
               <li key={index} className='row'>
                 <input 
                   type="checkbox"
