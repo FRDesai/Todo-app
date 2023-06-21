@@ -11,7 +11,7 @@ root.render(
     <BrowserRouter basename='/'>
       <Routes>
         <Route exact path='/' element={<App />} />
-        <Route exact path='/Todo' element={<App />} />
+        <Route exact path='/Todo-app' element={<App />} />
         <Route path='*' element={<App />} />
       </Routes>
     </BrowserRouter>
